@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Editor / verktøy
+.claude/settings.local.json
+
+# Midlertidige filer
+*.tmp
+_*.png
+
+# Interne notater og gamle designutkast (holdes lokalt, ikke publisert)
+CLAUDE.md
+INNHOLD.md
+TEKNISK.md
+designs/

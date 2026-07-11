@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Koppang Sportsfiskere — Fiskeforening i Østerdalen siden 1931</title>
+<meta name="description" content="Koppang Sportsfiskere forvalter 9 fiskevann i Vesle Femundsmarka på Koppang Østkjøl. Ørret, røye og abbor, hytteutleie og medlemskap. Etablert 1931.">
+<meta name="theme-color" content="#2D5016">
+
+<!-- Open Graph (deling på Facebook o.l.) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Koppang Sportsfiskere">
+<meta property="og:description" content="Fiskeforening i Østerdalen siden 1931. Fiskevann, hytteutleie og medlemskap i Vesle Femundsmarka.">
+<meta property="og:image" content="https://imagedelivery.net/hR_k_33bmwvCmQSAO0WhnQ/967f119e-0bc9-46c0-38be-24a055841f00/public">
+<meta property="og:locale" content="nb_NO">
+
+<link rel="icon" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --forest: #2D5016;
+    --moss:   #4A7C28;
+    --stone:  #F5F0EB;
+    --bark:   #3E2C1C;
+    --ink:    #374151;   /* gray-700 */
+    --muted:  #6B7280;   /* gray-500 */
+    --line:   #F3F4F6;   /* gray-100 */
+    --max:    72rem;     /* 1152px */
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+    background: #fff;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { width: 100%; margin-inline: auto; padding-inline: 1.5rem; }
+  .wrap-sm { max-width: 42rem; }
+  .wrap-md { max-width: 56rem; }
+  .wrap-lg { max-width: 64rem; }
+  .wrap-xl { max-width: var(--max); }
+
+  section { padding-block: 5rem; }
+  .bg-stone { background: var(--stone); }
+
+  /* ---------- Navigasjon ---------- */
+  .nav {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 50;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: saturate(180%) blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--max); margin-inline: auto;
+    padding: 1rem 1.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand { display: flex; align-items: center; gap: .625rem; font-size: 1.125rem; font-weight: 600; color: var(--forest); }
+  .brand-mark { width: 2.5rem; height: 2.5rem; flex: none; border-radius: 5px; }
+  .hero-mark { width: 6rem; height: 6rem; margin: 0 auto 1.75rem; display: block; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,.1); }
+  .nav-links { display: none; gap: 2rem; font-size: 0.875rem; color: var(--muted); }
+  .nav-links a { transition: color .2s; }
+  .nav-links a:hover { color: var(--forest); }
+  .nav-toggle {
+    background: none; border: 0; cursor: pointer; color: var(--ink);
+    display: inline-flex; padding: .25rem;
+  }
+  .nav-toggle svg { width: 1.5rem; height: 1.5rem; }
+  .mobile-menu { display: none; padding: 0 1.5rem 1rem; }
+  .mobile-menu.open { display: block; }
+  .mobile-menu a { display: block; padding: .5rem 0; color: var(--muted); }
+
+  @media (min-width: 768px) {
+    .nav-links { display: flex; }
+    .nav-toggle { display: none; }
+    .mobile-menu { display: none !important; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero { padding-top: 8rem; padding-bottom: 5rem; text-align: center; }
+  .eyebrow {
+    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.3em;
+    color: var(--moss); margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-size: clamp(2.75rem, 8vw, 4.5rem); font-weight: 300;
+    color: var(--bark); line-height: 1.05; margin-bottom: 2rem;
+  }
+  .hero p { font-size: 1.125rem; color: var(--muted); font-weight: 300; max-width: 34rem; margin-inline: auto; }
+  .hero-img {
+    margin-top: 3rem; width: 100%; height: clamp(300px, 55vw, 500px);
+    background: var(--stone); border-radius: 3px; overflow: hidden;
+  }
+  .hero-img img { width: 100%; height: 100%; object-fit: cover; opacity: .92; }
+
+  /* ---------- Om oss / statistikk ---------- */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 56rem; margin-inline: auto; }
+  .stat { text-align: center; }
+  .stat .num { font-size: 2.5rem; font-weight: 300; color: var(--forest); }
+  .stat .lbl { font-size: 0.875rem; color: var(--muted); margin-top: .5rem; }
+  .about-text { max-width: 40rem; margin: 3.5rem auto 0; text-align: center; color: #4b5563; }
+
+  /* ---------- Overskrifter ---------- */
+  h2.title { font-size: clamp(1.75rem, 4vw, 2rem); font-weight: 300; color: var(--bark); text-align: center; margin-bottom: 3rem; }
+
+  /* ---------- Fiskevann ---------- */
+  .lakes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .lake { background: var(--stone); padding: 1rem; border-radius: 3px; text-align: center; font-size: 0.875rem; color: var(--ink); }
+  .caption { text-align: center; font-size: 0.875rem; color: var(--muted); margin-top: 1.5rem; }
+  @media (min-width: 768px) { .lakes { grid-template-columns: repeat(4, 1fr); } }
+
+  /* ---------- Hytter ---------- */
+  .cabins { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+  @media (min-width: 768px) { .cabins { grid-template-columns: repeat(3, 1fr); } }
+  .cabin {
+    background: #fff; border-radius: 3px; overflow: hidden;
+    transition: box-shadow .3s; display: block;
+  }
+  .cabin:hover { box-shadow: 0 10px 25px rgba(0,0,0,.1); }
+  .cabin-img { height: 12rem; background: #e5e7eb; overflow: hidden; }
+  .cabin-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+  .cabin:hover .cabin-img img { transform: scale(1.05); }
+  .cabin-body { padding: 1.5rem; }
+  .cabin-body h3 { font-weight: 500; color: var(--bark); }
+  .cabin-body .meta { font-size: 0.875rem; color: var(--muted); margin-top: .25rem; }
+  .cabin-body .price { color: var(--forest); font-weight: 500; margin-top: .75rem; }
+
+  /* ---------- Medlemskap ---------- */
+  .price-row { display: flex; justify-content: space-between; padding: .75rem 0; border-bottom: 1px solid var(--line); }
+  .price-row span:last-child { color: var(--forest); font-weight: 500; }
+
+  /* ---------- Facebook ---------- */
+  .fb-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: start; }
+  @media (min-width: 768px) { .fb-grid { grid-template-columns: 2fr 3fr; } }
+  .fb-grid h2 { font-size: clamp(1.75rem, 4vw, 2rem); font-weight: 300; color: var(--bark); margin-bottom: 1rem; }
+  .fb-grid p { color: var(--muted); margin-bottom: 1.5rem; }
+  .btn-fb {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: var(--forest); color: #fff; padding: .625rem 1.25rem;
+    border-radius: 3px; font-size: 0.875rem; font-weight: 500; transition: background .2s;
+  }
+  .btn-fb:hover { background: var(--moss); }
+  .btn-fb svg { width: 1rem; height: 1rem; }
+  .fb-embed { background: #fff; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,.08); overflow: hidden; min-height: 260px; }
+  .fb-embed .fb-page { display: block; }
+  .fb-fallback {
+    display: none; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; gap: 1rem; padding: 3rem 1.5rem; min-height: 260px;
+  }
+  .fb-fallback .fb-mark { width: 3rem; height: 3rem; color: var(--forest); }
+  .fb-fallback p { color: var(--muted); margin: 0; max-width: 22rem; }
+
+  /* ---------- Kontakt ---------- */
+  .contact { display: grid; grid-template-columns: 1fr; gap: 2rem; text-align: left; max-width: 42rem; margin-inline: auto; }
+  @media (min-width: 640px) { .contact { grid-template-columns: repeat(2, 1fr); } }
+  .contact .name { font-weight: 500; color: var(--bark); }
+  .contact .det { font-size: 0.875rem; color: var(--muted); margin-top: .25rem; }
+
+  /* ---------- Footer ---------- */
+  footer { padding: 2rem 1.5rem; border-top: 1px solid var(--line); text-align: center; font-size: 0.875rem; color: #9CA3AF; }
+</style>
+</head>
+<body>
+
+<!-- Navigasjon -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand"><img class="brand-mark" src="assets/logo.jpg" alt="Koppang Sportsfiskere logo" width="90" height="90"><span>Koppang Sportsfiskere</span></a>
+    <div class="nav-links">
+      <a href="#om">Om oss</a>
+      <a href="#fiskevann">Fiskevann</a>
+      <a href="#hytter">Hytter</a>
+      <a href="#medlemskap">Medlemskap</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+    <button class="nav-toggle" aria-label="Meny" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMenu()">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="mobile-menu">
+    <a href="#om" onclick="closeMenu()">Om oss</a>
+    <a href="#fiskevann" onclick="closeMenu()">Fiskevann</a>
+    <a href="#hytter" onclick="closeMenu()">Hytter</a>
+    <a href="#medlemskap" onclick="closeMenu()">Medlemskap</a>
+    <a href="#kontakt" onclick="closeMenu()">Kontakt</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section id="top" class="hero wrap">
+  <div class="wrap-md" style="margin-inline:auto;padding-inline:0">
+    <img class="hero-mark" src="assets/logo.jpg" alt="Koppang Sportsfiskere logo" width="90" height="90">
+    <p class="eyebrow">Fiskeforening i Østerdalen</p>
+    <h1>Koppang<br>Sportsfiskere</h1>
+    <p>Siden 1931 har vi forvaltet noen av Østerdalens vakreste fiskevann i Vesle Femundsmarka.</p>
+    <div class="hero-img">
+      <img src="https://imagedelivery.net/hR_k_33bmwvCmQSAO0WhnQ/967f119e-0bc9-46c0-38be-24a055841f00/public" alt="Fiskevann i Vesle Femundsmarka">
+    </div>
+  </div>
+</section>
+
+<!-- Om oss -->
+<section id="om" class="bg-stone">
+  <div class="wrap wrap-md">
+    <div class="stats">
+      <div class="stat"><p class="num">300+</p><p class="lbl">Medlemmer</p></div>
+      <div class="stat"><p class="num">9</p><p class="lbl">Fiskevann</p></div>
+      <div class="stat"><p class="num">1931</p><p class="lbl">Etablert</p></div>
+    </div>
+    <p class="about-text">Koppang Sportsfiskeres Forening kjøpte i 1931 hele 930 mål skog for å sikre fiskerettigheter. I dag forvalter vi 9 vann med ørret, røye og abbor på Koppang Østkjøl — et område kjent som Vesle Femundsmarka med vill og vakker natur.</p>
+  </div>
+</section>
+
+<!-- Fiskevann -->
+<section id="fiskevann">
+  <div class="wrap wrap-md">
+    <h2 class="title">Våre fiskevann</h2>
+    <div class="lakes">
+      <div class="lake">Skårnsjøen</div>
+      <div class="lake">Langtjønn</div>
+      <div class="lake">Revtjønn</div>
+      <div class="lake">Vakkertjønn</div>
+      <div class="lake">Svartjønn</div>
+      <div class="lake">Brennkroktjønn</div>
+      <div class="lake">Øvre Nesstjønn</div>
+      <div class="lake">Negårdskroktjønn</div>
+      <div class="lake">Svestadtjønn</div>
+      <div class="lake">Okstjønn</div>
+      <div class="lake">Lortjønn</div>
+      <div class="lake">Netsjøen</div>
+    </div>
+    <p class="caption">Ørret · Røye · Abbor</p>
+  </div>
+</section>
+
+<!-- Hytter -->
+<section id="hytter" class="bg-stone">
+  <div class="wrap wrap-lg">
+    <h2 class="title">Hytteutleie</h2>
+    <div class="cabins">
+      <a class="cabin" target="_blank" rel="noopener" href="https://www.inatur.no/hytte/65d38f2fa6d3604af409188b/nybygget-tretopphytte-fantastisk-beliggende-ved-skarnsjoen-fiskekort-inkludert">
+        <div class="cabin-img"><img loading="lazy" src="https://imagedelivery.net/hR_k_33bmwvCmQSAO0WhnQ/e7edba05-4393-450a-ce63-e3e511d94200/public" alt="SkårnsjøToppen tretopphytte"></div>
+        <div class="cabin-body">
+          <h3>SkårnsjøToppen</h3>
+          <p class="meta">Tretopphytte · 5 pers · 19 m²</p>
+          <p class="price">2 400 kr/natt</p>
+        </div>
+      </a>
+      <a class="cabin" target="_blank" rel="noopener" href="https://www.inatur.no/hytte/65d4e036ee5e753b7c976fe6/vakkerbu-oppgradert-bu-i-vannkanten-ved-vakkertjern-flott-fiske-fiskekort-og-bat-inkl">
+        <div class="cabin-img"><img loading="lazy" src="https://imagedelivery.net/hR_k_33bmwvCmQSAO0WhnQ/d86001a6-623f-41d5-df94-670d345c4200/public" alt="Vakkerbu ved Vakkertjern"></div>
+        <div class="cabin-body">
+          <h3>Vakkerbu</h3>
+          <p class="meta">Ved Vakkertjern · 5 pers · 25 m²</p>
+          <p class="price">800 kr/natt</p>
+        </div>
+      </a>
+      <a class="cabin" target="_blank" rel="noopener" href="https://www.inatur.no/hytte/65d4f510ee5e753b7c97705e/skogskoie-vakkert-beliggende-ved-negardskroktjern-fiskekort-og-bat-er-inkludert">
+        <div class="cabin-img"><img loading="lazy" src="https://imagedelivery.net/hR_k_33bmwvCmQSAO0WhnQ/2a520fcb-4a13-41f9-7c70-4fc89bfc8800/public" alt="Skogskoie ved Negårdskroktjern"></div>
+        <div class="cabin-body">
+          <h3>Skogskoie</h3>
+          <p class="meta">Ved Negårdskroktjern · 4 pers · 22 m²</p>
+          <p class="price">400 kr/natt</p>
+        </div>
+      </a>
+    </div>
+    <p class="caption">Fiskekort og båt er inkludert i alle hyttene. Bestilling via inatur.no</p>
+  </div>
+</section>
+
+<!-- Medlemskap -->
+<section id="medlemskap">
+  <div class="wrap wrap-sm">
+    <h2 class="title">Medlemskap &amp; Fiskekort</h2>
+    <div class="price-row"><span>Enkeltmedlem</span><span>100 kr</span></div>
+    <div class="price-row"><span>Enkeltmedlem m/fiskekort</span><span>200 kr</span></div>
+    <div class="price-row"><span>Familiemedlemskap</span><span>200 kr</span></div>
+    <div class="price-row"><span>Familiemedlemskap m/fiskekort</span><span>300 kr</span></div>
+    <p class="caption">Familiemedlemmer på samme adresse kan være med til fylte 20 år. Alle medlemmer fra 16 år mottar medlemskort.</p>
+  </div>
+</section>
+
+<!-- Facebook / Siste nytt -->
+<section id="facebook" class="bg-stone">
+  <div class="wrap wrap-md">
+    <div class="fb-grid">
+      <div>
+        <h2>Siste nytt</h2>
+        <p>Følg oss på Facebook for nyheter om fiske, hyttene, løypeforhold og arrangementer.</p>
+        <a class="btn-fb" target="_blank" rel="noopener" href="https://www.facebook.com/koppangsportsfiskere">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Følg oss på Facebook
+        </a>
+      </div>
+      <div>
+        <div class="fb-embed">
+          <div id="fb-root"></div>
+          <script async defer crossorigin="anonymous" src="https://connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v21.0"></script>
+          <div class="fb-page" data-href="https://www.facebook.com/koppangsportsfiskere" data-tabs="timeline" data-width="500" data-height="640" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+            <blockquote cite="https://www.facebook.com/koppangsportsfiskere" class="fb-xfbml-parse-ignore">
+              <a href="https://www.facebook.com/koppangsportsfiskere">Koppang Sportsfiskere på Facebook</a>
+            </blockquote>
+          </div>
+          <!-- Vises automatisk hvis Facebook-widgeten ikke laster (f.eks. lokalt, uten https, eller blokkert av nettleser) -->
+          <div id="fb-fallback" class="fb-fallback">
+            <svg class="fb-mark" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <p>Facebook-feeden vises her på den publiserte siden. Åpne siden vår direkte for å se de siste innleggene.</p>
+            <a class="btn-fb" target="_blank" rel="noopener" href="https://www.facebook.com/koppangsportsfiskere">Åpne Facebook-siden</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Kontakt -->
+<section id="kontakt">
+  <div class="wrap wrap-sm">
+    <h2 class="title">Kontakt</h2>
+    <div class="contact">
+      <div>
+        <p class="name">Erik Trøen</p>
+        <p class="det">Tlf: <a href="tel:+4795056765">950 56 765</a></p>
+      </div>
+      <div>
+        <p class="name">Per Harry Øien</p>
+        <p class="det">Tlf: <a href="tel:+4799158895">991 58 895</a></p>
+        <p class="det">E-post: <a href="mailto:perharryoien@gmail.com">perharryoien@gmail.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; 2026 Koppang Sportsfiskere · Koppang Østkjøl, Stor-Elvdal
+</footer>
+
+<script>
+  function toggleMenu() {
+    var m = document.getElementById('mobile-menu');
+    var btn = document.querySelector('.nav-toggle');
+    var open = m.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  function closeMenu() {
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.querySelector('.nav-toggle').setAttribute('aria-expanded', 'false');
+  }
+
+  // Facebook-widget: hvis den ikke har ladet inn en iframe etter noen sekunder, vis fallback-kortet.
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      var page = document.querySelector('.fb-page');
+      var loaded = page && page.querySelector('iframe');
+      if (!loaded) {
+        if (page) page.style.display = 'none';
+        var fb = document.getElementById('fb-fallback');
+        if (fb) fb.style.display = 'flex';
+      }
+    }, 4000);
+  });
+</script>
+
+</body>
+</html>

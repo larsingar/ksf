@@ -155,10 +155,16 @@
   .fb-fallback p { color: var(--muted); margin: 0; max-width: 22rem; }
 
   /* ---------- Kontakt ---------- */
-  .contact { display: grid; grid-template-columns: 1fr; gap: 2rem; text-align: left; max-width: 42rem; margin-inline: auto; }
+  .contact { display: grid; grid-template-columns: 1fr; gap: 2rem; text-align: center; max-width: 42rem; margin-inline: auto; }
   @media (min-width: 640px) { .contact { grid-template-columns: repeat(2, 1fr); } }
   .contact .name { font-weight: 500; color: var(--bark); }
-  .contact .det { font-size: 0.875rem; color: var(--muted); margin-top: .25rem; }
+  .contact .det { font-size: 0.9375rem; color: var(--muted); margin-top: .25rem; }
+  .contact-email {
+    text-align: center; margin: 2.5rem auto 0; padding-top: 1.75rem;
+    max-width: 42rem; border-top: 1px solid rgba(0,0,0,.08);
+    color: var(--muted); font-size: 0.9375rem;
+  }
+  .contact-email a { color: var(--forest); font-weight: 500; }
 
   /* ---------- Footer ---------- */
   footer { padding: 2rem 1.5rem; border-top: 1px solid var(--line); text-align: center; font-size: 0.875rem; color: #9CA3AF; }
@@ -203,7 +209,7 @@
 <!-- Om oss -->
 <section id="om" class="bg-stone">
   <div class="wrap wrap-md">
-    <p class="about-text">Koppang Sportsfiskeres Forening kjøpte i 1931 hele 930 mål skog for å sikre fiskerettigheter. I dag forvalter vi 9 vann med ørret, røye og abbor på Koppang Østkjøl — et område kjent som Vesle Femundsmarka med vill og vakker natur.</p>
+    <p class="about-text">Koppang Sportsfiskeres Forening kjøpte i 1931 hele 930 mål skog for å sikre fiskerettigheter. I dag forvalter vi 9 vann med ørret, røye og abbor på Koppang Østkjøl — et område kjent som Vesle Femundsmarka.</p>
   </div>
 </section>
 
@@ -297,7 +303,7 @@
 </section>
 
 <!-- Kontakt -->
-<section id="kontakt">
+<section id="kontakt" class="bg-stone">
   <div class="wrap wrap-sm">
     <h2 class="title">Kontakt</h2>
     <div class="contact">
@@ -310,7 +316,7 @@
         <p class="det">Tlf: <a href="tel:+4799158895">991 58 895</a></p>
       </div>
     </div>
-    <p class="caption">Felles e-post: <a href="mailto:koppangsportsfiskere@gmail.com">koppangsportsfiskere@gmail.com</a></p>
+    <p class="contact-email">Felles e-post: <a href="mailto:koppangsportsfiskere@gmail.com">koppangsportsfiskere@gmail.com</a></p>
   </div>
 </section>
 

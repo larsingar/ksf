@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Koppang Sportsfiskere — Fiskeforening i Østerdalen siden 1931</title>
-<meta name="description" content="Koppang Sportsfiskere forvalter 9 fiskevann i Vesle Femundsmarka på Koppang Østkjøl. Ørret, røye og abbor, hytteutleie og medlemskap. Etablert 1931.">
+<meta name="description" content="Koppang Sportsfiskere forvalter 9 fiskevann i Vesle Femundsmarka på Koppang Østkjøl. Ørret, røye og abbor, samt hytteutleie. Etablert 1931.">
 <meta name="theme-color" content="#2D5016">
 
 <!-- Open Graph (deling på Facebook o.l.) -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Koppang Sportsfiskere">
-<meta property="og:description" content="Fiskeforening i Østerdalen siden 1931. Fiskevann, hytteutleie og medlemskap i Vesle Femundsmarka.">
+<meta property="og:description" content="Fiskeforening i Østerdalen siden 1931. Fiskevann og hytteutleie i Vesle Femundsmarka.">
 <meta property="og:image" content="https://imagedelivery.net/hR_k_33bmwvCmQSAO0WhnQ/967f119e-0bc9-46c0-38be-24a055841f00/public">
 <meta property="og:locale" content="nb_NO">
 
@@ -105,12 +105,8 @@
   }
   .hero-img img { width: 100%; height: 100%; object-fit: cover; opacity: .92; }
 
-  /* ---------- Om oss / statistikk ---------- */
-  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 56rem; margin-inline: auto; }
-  .stat { text-align: center; }
-  .stat .num { font-size: 2.5rem; font-weight: 300; color: var(--forest); }
-  .stat .lbl { font-size: 0.875rem; color: var(--muted); margin-top: .5rem; }
-  .about-text { max-width: 40rem; margin: 3.5rem auto 0; text-align: center; color: #4b5563; }
+  /* ---------- Om oss ---------- */
+  .about-text { max-width: 40rem; margin: 0 auto; text-align: center; color: #4b5563; }
 
   /* ---------- Overskrifter ---------- */
   h2.title { font-size: clamp(1.75rem, 4vw, 2rem); font-weight: 300; color: var(--bark); text-align: center; margin-bottom: 3rem; }
@@ -136,10 +132,6 @@
   .cabin-body h3 { font-weight: 500; color: var(--bark); }
   .cabin-body .meta { font-size: 0.875rem; color: var(--muted); margin-top: .25rem; }
   .cabin-body .price { color: var(--forest); font-weight: 500; margin-top: .75rem; }
-
-  /* ---------- Medlemskap ---------- */
-  .price-row { display: flex; justify-content: space-between; padding: .75rem 0; border-bottom: 1px solid var(--line); }
-  .price-row span:last-child { color: var(--forest); font-weight: 500; }
 
   /* ---------- Facebook ---------- */
   .fb-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: start; }
@@ -182,7 +174,6 @@
       <a href="#om">Om oss</a>
       <a href="#fiskevann">Fiskevann</a>
       <a href="#hytter">Hytter</a>
-      <a href="#medlemskap">Medlemskap</a>
       <a href="#kontakt">Kontakt</a>
     </div>
     <button class="nav-toggle" aria-label="Meny" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMenu()">
@@ -193,7 +184,6 @@
     <a href="#om" onclick="closeMenu()">Om oss</a>
     <a href="#fiskevann" onclick="closeMenu()">Fiskevann</a>
     <a href="#hytter" onclick="closeMenu()">Hytter</a>
-    <a href="#medlemskap" onclick="closeMenu()">Medlemskap</a>
     <a href="#kontakt" onclick="closeMenu()">Kontakt</a>
   </div>
 </nav>
@@ -204,7 +194,6 @@
     <img class="hero-mark" src="assets/logo.jpg" alt="Koppang Sportsfiskere logo" width="90" height="90">
     <p class="eyebrow">Fiskeforening i Østerdalen</p>
     <h1>Koppang<br>Sportsfiskere</h1>
-    <p>Siden 1931 har vi forvaltet noen av Østerdalens vakreste fiskevann i Vesle Femundsmarka.</p>
     <div class="hero-img">
       <img src="https://imagedelivery.net/hR_k_33bmwvCmQSAO0WhnQ/967f119e-0bc9-46c0-38be-24a055841f00/public" alt="Fiskevann i Vesle Femundsmarka">
     </div>
@@ -214,11 +203,6 @@
 <!-- Om oss -->
 <section id="om" class="bg-stone">
   <div class="wrap wrap-md">
-    <div class="stats">
-      <div class="stat"><p class="num">300+</p><p class="lbl">Medlemmer</p></div>
-      <div class="stat"><p class="num">9</p><p class="lbl">Fiskevann</p></div>
-      <div class="stat"><p class="num">1931</p><p class="lbl">Etablert</p></div>
-    </div>
     <p class="about-text">Koppang Sportsfiskeres Forening kjøpte i 1931 hele 930 mål skog for å sikre fiskerettigheter. I dag forvalter vi 9 vann med ørret, røye og abbor på Koppang Østkjøl — et område kjent som Vesle Femundsmarka med vill og vakker natur.</p>
   </div>
 </section>
@@ -279,20 +263,8 @@
   </div>
 </section>
 
-<!-- Medlemskap -->
-<section id="medlemskap">
-  <div class="wrap wrap-sm">
-    <h2 class="title">Medlemskap &amp; Fiskekort</h2>
-    <div class="price-row"><span>Enkeltmedlem</span><span>100 kr</span></div>
-    <div class="price-row"><span>Enkeltmedlem m/fiskekort</span><span>200 kr</span></div>
-    <div class="price-row"><span>Familiemedlemskap</span><span>200 kr</span></div>
-    <div class="price-row"><span>Familiemedlemskap m/fiskekort</span><span>300 kr</span></div>
-    <p class="caption">Familiemedlemmer på samme adresse kan være med til fylte 20 år. Alle medlemmer fra 16 år mottar medlemskort.</p>
-  </div>
-</section>
-
 <!-- Facebook / Siste nytt -->
-<section id="facebook" class="bg-stone">
+<section id="facebook">
   <div class="wrap wrap-md">
     <div class="fb-grid">
       <div>
@@ -336,9 +308,9 @@
       <div>
         <p class="name">Per Harry Øien</p>
         <p class="det">Tlf: <a href="tel:+4799158895">991 58 895</a></p>
-        <p class="det">E-post: <a href="mailto:perharryoien@gmail.com">perharryoien@gmail.com</a></p>
       </div>
     </div>
+    <p class="caption">Felles e-post: <a href="mailto:koppangsportsfiskere@gmail.com">koppangsportsfiskere@gmail.com</a></p>
   </div>
 </section>
 
